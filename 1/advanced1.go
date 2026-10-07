@@ -1,15 +1,19 @@
 package main
 
+<<<<<<< HEAD
 import (
 	"fmt"
 )
 
+=======
+>>>>>>> 6752528d63240332faec6c93c802372b56d2895e
 type Contact struct {
 	Name  string
 	Phone string
 }
 
 func main() {
+<<<<<<< HEAD
 	m := make(map[string]Contact)
 
 	var n int
@@ -57,4 +61,7 @@ func main() {
 			return
 		}
 	}
+=======
+	m := map[string]Contact{}
+>>>>>>> 6752528d63240332faec6c93c802372b56d2895e
 }

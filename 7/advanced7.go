@@ -10,7 +10,8 @@ import (
 
 var ErrExpired = errors.New("file has expired")
 
-// ExpiringFile реализует io.ReadCloser с ограничением по времени работы после первого чтения.
+// ExpiringFile реализует io.ReadCloser
+// с ограничением по времени работы после первого чтения.
 type ExpiringFile struct {
 	File      os.File
 	Duration  time.Duration
@@ -40,7 +41,8 @@ func NewExpiringFile(filePath string, duration time.Duration) (*ExpiringFile, er
 	}, nil
 }
 
-// Read считывает данные. При первом вызове фиксирует время начала.
+// Read считывает данные.
+// При первом вызове фиксирует время начала.
 // Если лимит времени превышен - возвращает ошибку ErrExpired.
 func (ef *ExpiringFile) Read(p []byte) (int, error) {
 	if !ef.IsOpen {
@@ -196,7 +198,7 @@ func test5() bool {
 	return true
 }
 
-// Проверка ленивого старта, таймаут не должен тикать с момента создания стрктуры
+// Проверка ленивого старта, таймаут не должен тикать с момента создания структуры
 func test6() bool {
 	path, cleanup := createTempFile("abcdef")
 	defer cleanup()

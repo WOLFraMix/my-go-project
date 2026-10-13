@@ -12,7 +12,7 @@ func main() {
 func CompressNumbers(nums []int) []string {
 	var result []string
 	if len(nums) == 0 {
-		return result
+		return []string{}
 	}
 
 	start := nums[0]

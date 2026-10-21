@@ -4,7 +4,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pass 
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: postgres_go
       PGDATA: /data/postgres
     volumes:
       - ./postgres_data:/data/postgres

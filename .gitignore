@@ -8,3 +8,4 @@ go.sum
 *.txt
 postgres_data/
 */postgres_data/
+/.env

@@ -19,5 +19,6 @@
         "editor.codeActionsOnSave": {
             "source.fixAll": "always",
         }
-    }
+    },
+    "commentTranslate.source": "wolframix.comment-translate-yandex-yandex"
 }

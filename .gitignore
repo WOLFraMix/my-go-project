@@ -9,3 +9,6 @@ go.sum
 postgres_data/
 */postgres_data/
 /.env
+*/.env
+*/.txt
+/.txt

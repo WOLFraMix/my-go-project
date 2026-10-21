@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"lesson/26/configs"
 	"lesson/26/internal/auth"
+	"lesson/26/pkg/db"
 	"net/http"
 )
 
 func main() {
 	cfg := configs.LoadConfig()
+	_ = db.NewDb(cfg)
 	router := http.NewServeMux()
 	auth.NewAuthHandler(router, auth.AuthHandlerDeps{
 		Config: cfg,

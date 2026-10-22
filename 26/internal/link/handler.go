@@ -1,7 +1,6 @@
 package link
 
 import (
-	"fmt"
 	"lesson/25/pkg/req"
 	"lesson/26/pkg/resp"
 	"net/http"
@@ -59,6 +58,7 @@ func (handler *LinkHandler) Update() http.HandlerFunc {
 		id, err := strconv.ParseUint(idString, 10, 64)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
 		}
 		link, err := handler.LinkRepository.Update(&Link{
 			Model: gorm.Model{ID: uint(id)},
@@ -67,6 +67,7 @@ func (handler *LinkHandler) Update() http.HandlerFunc {
 		})
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
 		}
 		resp.Json(w, link, 201)
 	}
@@ -74,8 +75,23 @@ func (handler *LinkHandler) Update() http.HandlerFunc {
 
 func (handler *LinkHandler) Delete() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		id := r.PathValue("id")
-		fmt.Println(id)
+		idString := r.PathValue("id")
+		id, err := strconv.ParseUint(idString, 10, 64)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		_, err = handler.LinkRepository.GetById(uint(id))
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusNotFound)
+			return
+		}
+		err = handler.LinkRepository.Delete(uint(id))
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		resp.Json(w, nil, 204)
 	}
 }
 

@@ -1,0 +1,14 @@
+{
+    "user": {
+        "name": "Павел",
+        "email": "pavel@mail.ru",
+        "age": 35,
+        "isSubscribed": true
+    },
+    "orderId": "A-12345",
+    "products": [
+        "Ноутбук",
+        "Мышь",
+        "Чехол"
+    ]
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "user_id": 101,
+        "amount": 1500
+    },
+    {
+        "user_id": "102",
+        "amount": "3200"
+    },
+    {
+        "user_id": 101,
+        "amount": "2500"
+    },
+    {
+        "user_id": "103",
+        "amount": 800
+    },
+    {
+        "user_id": 102,
+        "amount": 1700
+    },
+    {
+        "user_id": "101",
+        "amount": 900
+    },
+    {
+        "user_id": "103",
+        "amount": "4100"
+    },
+    {
+        "user_id": "102",
+        "amount": "2800"
+    }
+]

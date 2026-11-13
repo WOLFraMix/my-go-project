@@ -1,2 +1,12 @@
+docker compose up -d --build
+
 docker compose up -d
+
+docker compose ps
+
 docker compose down
+
+go mod tidy
+go build ./...
+go vet ./...
+go test ./...

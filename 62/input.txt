@@ -1,0 +1,1 @@
+{"user_102": {"name": "Алексей", "role": "guest"}, "user_101": {"name": "Павел", "role": "admin"}}

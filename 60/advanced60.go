@@ -18,6 +18,8 @@ func main() {
 	fmt.Println(obj.Firstname)
 }
 
-// go run advanced60.go --from-file input.txt
+// Get-Content input.txt | go run main.go
+
+// go run main.go --from-file input.txt
 
 // go run main.go < input.txt
